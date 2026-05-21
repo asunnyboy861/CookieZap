@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-05-20T00:00:00Z",
+  "rules": [
+    {
+      "cmp": "OneTrust",
+      "selectors": ["#onetrust-banner-sdk", "#onetrust-consent-sdk"],
+      "rejectButtons": [".ot-pref-refuse-all-handler", "#onetrust-reject-all-handler"],
+      "settingsButtons": [".ot-pc-refuse-all-handler", "#onetrust-pc-btn-handler"]
+    },
+    {
+      "cmp": "Cookiebot",
+      "selectors": ["#CybotCookiebotDialog", "#CybotCookiebotDialogBody"],
+      "rejectButtons": ["#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll"],
+      "settingsButtons": ["#CybotCookiebotDialogBodyLevelButtonCustomize"]
+    },
+    {
+      "cmp": "CookieConsent",
+      "selectors": [".cc-window", ".cc-banner"],
+      "rejectButtons": [".cc-dismiss", ".cc-btn.cc-deny"],
+      "settingsButtons": []
+    },
+    {
+      "cmp": "Didomi",
+      "selectors": ["#didomi-popup", ".didomi-popup"],
+      "rejectButtons": ["button[id*='didomi-dismiss']", ".didomi-continue-without-agreeing"],
+      "settingsButtons": ["button[id*='didomi-purposes']"]
+    },
+    {
+      "cmp": "CookieYes",
+      "selectors": [".cky-consent-container", ".cky-banner"],
+      "rejectButtons": [".cky-btn-reject", ".cky-btn-customize-reject"],
+      "settingsButtons": [".cky-btn-customize"]
+    },
+    {
+      "cmp": "Usercentrics",
+      "selectors": ["#usercentrics-root", "[data-testid='uc-default-banner']"],
+      "rejectButtons": ["button[data-testid='uc-deny-all-button']"],
+      "settingsButtons": ["button[data-testid='uc-more-button']"]
+    },
+    {
+      "cmp": "Borlabs",
+      "selectors": ["#borlabs-cookie-banner", ".borlabs-cookie"],
+      "rejectButtons": ["#CookieBoxSaveButton", ".borlabs-cookie-refuse"],
+      "settingsButtons": ["#CookieBoxMoreInformation"]
+    },
+    {
+      "cmp": "Complianz",
+      "selectors": ["#cmplz-cookiebanner-container", ".cmplz-cookiebanner"],
+      "rejectButtons": [".cmplz-btn.cmplz-deny", "#cmplz-btn-deny"],
+      "settingsButtons": [".cmplz-btn.cmplz-manage", "#cmplz-manage-consent"]
+    },
+    {
+      "cmp": "CookieLawInfo",
+      "selectors": [".cli-bar-container", "#cliSettingsPopup"],
+      "rejectButtons": [".wt-cli-reject-btn", "#cookie_action_close_header_reject"],
+      "settingsButtons": [".cli_settings_button", "#cookie_action_settings"]
+    },
+    {
+      "cmp": "Moove",
+      "selectors": ["#moove_gdpr_cookie_info_bar", ".moove-gdpr-info-bar"],
+      "rejectButtons": [".moove-gdpr-infobar-reject-btn", "#moove_gdpr_cookie_info_bar_reject"],
+      "settingsButtons": [".moove-gdpr-infobar-settings-btn", "#moove_gdpr_cookie_info_bar_settings"]
+    },
+    {
+      "cmp": "Quantcast",
+      "selectors": [".qc-cmp2-container", "#qc-cmp2-container"],
+      "rejectButtons": [".qc-cmp2-buttons-reject", "[mode='reject']"],
+      "settingsButtons": [".qc-cmp2-buttons-manage", "[mode='manage']"]
+    },
+    {
+      "cmp": "TrustArc",
+      "selectors": ["#truste-consent-track", ".truste-consent-track"],
+      "rejectButtons": [".truste-reject-btn", "#truste-reject-btn"],
+      "settingsButtons": [".truste-manage-btn", "#truste-manage-btn"]
+    }
+  ]
+}

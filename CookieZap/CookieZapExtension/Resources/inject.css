@@ -1,0 +1,68 @@
+[id*="cookie-banner"],
+[id*="cookie-consent"],
+[id*="cookie-notice"],
+[id*="cookie-popup"],
+[id*="cookie-bar"],
+[id*="cookie-warning"],
+[class*="cookie-banner"],
+[class*="cookie-consent"],
+[class*="cookie-notice"],
+[class*="cookie-popup"],
+[class*="cookie-bar"],
+[class*="cookie-warning"],
+#onetrust-banner-sdk,
+#onetrust-consent-sdk,
+#CybotCookiebotDialog,
+.cc-window,
+.cc-banner,
+#cc-banner,
+#consent-banner,
+.consent-banner,
+#gdpr-banner,
+.gdpr-banner,
+.qc-cmp2-container,
+#didomi-popup,
+.didomi-popup,
+.cky-consent-container,
+.cky-banner,
+#usercentrics-root,
+[data-testid="uc-default-banner"],
+#borlabs-cookie-banner,
+.borlabs-cookie,
+#cmplz-cookiebanner-container,
+.cmplz-cookiebanner,
+.cli-bar-container,
+#moove_gdpr_cookie_info_bar,
+.gdpr-cookie-banner,
+#gdpr-cookie-banner,
+[id*="CybotCookiebot"],
+[class*="CybotCookiebot"],
+[id*="truste-consent"],
+[class*="truste-consent"],
+[id*="popin-tc"],
+[class*="popin-tc"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+body.cookiezap-body-scroll-lock,
+body.cookie-consent-active,
+body.modal-open[data-cc="open"] {
+  overflow: auto !important;
+  position: static !important;
+}
+
+[class*="cookie-overlay"],
+[class*="consent-overlay"],
+[id*="cookie-overlay"],
+[id*="consent-overlay"],
+.cc-overlay,
+.cky-overlay,
+#onetrust-pc-sdk-overlay {
+  display: none !important;
+}

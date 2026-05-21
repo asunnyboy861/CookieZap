@@ -1,0 +1,912 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BDC9AFFF36B2AA5E90BCD17 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 2C57A3AB4B523B6F9848CBFB /* Resources */; };
+		1499708EF0490BF8E2A0FABD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601CC336F9BBD1598E073D12 /* Foundation.framework */; };
+		163B458103810CE759734CEA /* BlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */; };
+		526D36906E3EA6B618F53005 /* AppGroupIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FFE206BF9A21C4CC893D14 /* AppGroupIDs.swift */; };
+		58F9559A20D85F7C39781B96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601CC336F9BBD1598E073D12 /* Foundation.framework */; };
+		87E0BB639E9AFBE9631B9958 /* AppGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EA148BA9FC6BF76236004 /* AppGroupManager.swift */; };
+		9E0D41BCAD4EA0DA5BA75D84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA116EBCDBAFD273C58D24E /* SafariServices.framework */; };
+		C896795C0A4392A7FD123414 /* blockerlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EE45F57DE509E54EB8759FA /* blockerlist.json */; };
+		C8D9EE6F0367FBD83E6A50DA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E62466DA1AA3F6C88B86FF /* SafariServices.framework */; };
+		F5AF875CBAD37D4E1274A535 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F860CA7FAD6B93AA3585DE /* SafariWebExtensionHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39FB88D12DE7E36E09DF5E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A6806122FBDFCC200DE4AF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18690EED3087C74FDD4B974;
+			remoteInfo = CookieZapExtension;
+		};
+		6A6806282FBDFCC400DE4AF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A6806122FBDFCC200DE4AF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A6806192FBDFCC200DE4AF1;
+			remoteInfo = CookieZap;
+		};
+		6A6806322FBDFCC400DE4AF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A6806122FBDFCC200DE4AF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A6806192FBDFCC200DE4AF1;
+			remoteInfo = CookieZap;
+		};
+		788E1E273ECFEC9D06DAD9FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A6806122FBDFCC200DE4AF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2D14968E03BD6DD8906C9EB;
+			remoteInfo = CookieZapBlocker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EA1013696A60DE8F50C75BE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = "<group>"; };
+		24E62466DA1AA3F6C88B86FF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		2C57A3AB4B523B6F9848CBFB /* Resources */ = {isa = PBXFileReference; includeInIndex = 1; name = Resources; path = CookieZapExtension/Resources; sourceTree = "<group>"; };
+		3EE45F57DE509E54EB8759FA /* blockerlist.json */ = {isa = PBXFileReference; includeInIndex = 1; name = blockerlist.json; path = CookieZapBlocker/blockerlist.json; sourceTree = "<group>"; };
+		45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockerRequestHandler.swift; path = CookieZapBlocker/BlockerRequestHandler.swift; sourceTree = "<group>"; };
+		601CC336F9BBD1598E073D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		622D1EB989274E1B75EE8A5D /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = "<group>"; };
+		6A68061A2FBDFCC200DE4AF1 /* CookieZap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieZap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6806272FBDFCC400DE4AF1 /* CookieZapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookieZapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6806312FBDFCC400DE4AF1 /* CookieZapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookieZapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA116EBCDBAFD273C58D24E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		9B0C1AD219A4FB299F673404 /* CookieZapExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CookieZapExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF4B4AB402FA4D6E919BD35 /* CookieZapBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CookieZapBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58EA148BA9FC6BF76236004 /* AppGroupManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppGroupManager.swift; path = CookieZap/Services/AppGroupManager.swift; sourceTree = "<group>"; };
+		C8FFE206BF9A21C4CC893D14 /* AppGroupIDs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppGroupIDs.swift; path = CookieZap/Shared/AppGroupIDs.swift; sourceTree = "<group>"; };
+		D3F860CA7FAD6B93AA3585DE /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SafariWebExtensionHandler.swift; path = CookieZapExtension/SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6A68061C2FBDFCC200DE4AF1 /* CookieZap */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = CookieZap;
+			sourceTree = "<group>";
+		};
+		6A68062A2FBDFCC400DE4AF1 /* CookieZapTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = CookieZapTests;
+			sourceTree = "<group>";
+		};
+		6A6806342FBDFCC400DE4AF1 /* CookieZapUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = CookieZapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		031666FE6C5B52F1BFF38F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F9559A20D85F7C39781B96 /* Foundation.framework in Frameworks */,
+				C8D9EE6F0367FBD83E6A50DA /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68572B55FE3F76D3F75533E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1499708EF0490BF8E2A0FABD /* Foundation.framework in Frameworks */,
+				9E0D41BCAD4EA0DA5BA75D84 /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A6806172FBDFCC200DE4AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A6806242FBDFCC400DE4AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A68062E2FBDFCC400DE4AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11AE03A41C0D63E7A8683264 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF1D2EB9DB24F3A1E2C11643 /* iOS */,
+				24E62466DA1AA3F6C88B86FF /* SafariServices.framework */,
+				9AA116EBCDBAFD273C58D24E /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A6806112FBDFCC200DE4AF1 = {
+			isa = PBXGroup;
+			children = (
+				6A68061C2FBDFCC200DE4AF1 /* CookieZap */,
+				6A68062A2FBDFCC400DE4AF1 /* CookieZapTests */,
+				6A6806342FBDFCC400DE4AF1 /* CookieZapUITests */,
+				6A68061B2FBDFCC200DE4AF1 /* Products */,
+				11AE03A41C0D63E7A8683264 /* Frameworks */,
+				D3F860CA7FAD6B93AA3585DE /* SafariWebExtensionHandler.swift */,
+				2C57A3AB4B523B6F9848CBFB /* Resources */,
+				45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */,
+				3EE45F57DE509E54EB8759FA /* blockerlist.json */,
+				622D1EB989274E1B75EE8A5D /* SafariServices.framework */,
+				0EA1013696A60DE8F50C75BE /* SafariServices.framework */,
+				B58EA148BA9FC6BF76236004 /* AppGroupManager.swift */,
+				C8FFE206BF9A21C4CC893D14 /* AppGroupIDs.swift */,
+			);
+			sourceTree = "<group>";
+		};
+		6A68061B2FBDFCC200DE4AF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A68061A2FBDFCC200DE4AF1 /* CookieZap.app */,
+				6A6806272FBDFCC400DE4AF1 /* CookieZapTests.xctest */,
+				6A6806312FBDFCC400DE4AF1 /* CookieZapUITests.xctest */,
+				9B0C1AD219A4FB299F673404 /* CookieZapExtension.appex */,
+				AAF4B4AB402FA4D6E919BD35 /* CookieZapBlocker.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1D2EB9DB24F3A1E2C11643 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				601CC336F9BBD1598E073D12 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A6806192FBDFCC200DE4AF1 /* CookieZap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A68063B2FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZap" */;
+			buildPhases = (
+				6A6806162FBDFCC200DE4AF1 /* Sources */,
+				6A6806172FBDFCC200DE4AF1 /* Frameworks */,
+				6A6806182FBDFCC200DE4AF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9E82776F1DA63C918681C12 /* PBXTargetDependency */,
+				1F0B31008C03C505BB2BBC29 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6A68061C2FBDFCC200DE4AF1 /* CookieZap */,
+			);
+			name = CookieZap;
+			productName = CookieZap;
+			productReference = 6A68061A2FBDFCC200DE4AF1 /* CookieZap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A6806262FBDFCC400DE4AF1 /* CookieZapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A68063E2FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZapTests" */;
+			buildPhases = (
+				6A6806232FBDFCC400DE4AF1 /* Sources */,
+				6A6806242FBDFCC400DE4AF1 /* Frameworks */,
+				6A6806252FBDFCC400DE4AF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A6806292FBDFCC400DE4AF1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6A68062A2FBDFCC400DE4AF1 /* CookieZapTests */,
+			);
+			name = CookieZapTests;
+			productName = CookieZapTests;
+			productReference = 6A6806272FBDFCC400DE4AF1 /* CookieZapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A6806302FBDFCC400DE4AF1 /* CookieZapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A6806412FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZapUITests" */;
+			buildPhases = (
+				6A68062D2FBDFCC400DE4AF1 /* Sources */,
+				6A68062E2FBDFCC400DE4AF1 /* Frameworks */,
+				6A68062F2FBDFCC400DE4AF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A6806332FBDFCC400DE4AF1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6A6806342FBDFCC400DE4AF1 /* CookieZapUITests */,
+			);
+			name = CookieZapUITests;
+			productName = CookieZapUITests;
+			productReference = 6A6806312FBDFCC400DE4AF1 /* CookieZapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A18690EED3087C74FDD4B974 /* CookieZapExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DA7A92887881DE892795CAA /* Build configuration list for PBXNativeTarget "CookieZapExtension" */;
+			buildPhases = (
+				406D87EC38F555D7BDD07CC0 /* Sources */,
+				031666FE6C5B52F1BFF38F1C /* Frameworks */,
+				D548A050A16B7513DFBADED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CookieZapExtension;
+			productName = CookieZapExtension;
+			productReference = 9B0C1AD219A4FB299F673404 /* CookieZapExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A2D14968E03BD6DD8906C9EB /* CookieZapBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C9A74E705FEB73B35F3CC0 /* Build configuration list for PBXNativeTarget "CookieZapBlocker" */;
+			buildPhases = (
+				CAA7BA935B81433DA0C96002 /* Sources */,
+				68572B55FE3F76D3F75533E5 /* Frameworks */,
+				8338E8E474AB9F2DAE6E05D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CookieZapBlocker;
+			productName = CookieZapBlocker;
+			productReference = AAF4B4AB402FA4D6E919BD35 /* CookieZapBlocker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A6806122FBDFCC200DE4AF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					6A6806192FBDFCC200DE4AF1 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					6A6806262FBDFCC400DE4AF1 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = 6A6806192FBDFCC200DE4AF1;
+					};
+					6A6806302FBDFCC400DE4AF1 = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = 6A6806192FBDFCC200DE4AF1;
+					};
+				};
+			};
+			buildConfigurationList = 6A6806152FBDFCC200DE4AF1 /* Build configuration list for PBXProject "CookieZap" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A6806112FBDFCC200DE4AF1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6A68061B2FBDFCC200DE4AF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A6806192FBDFCC200DE4AF1 /* CookieZap */,
+				6A6806262FBDFCC400DE4AF1 /* CookieZapTests */,
+				6A6806302FBDFCC400DE4AF1 /* CookieZapUITests */,
+				A18690EED3087C74FDD4B974 /* CookieZapExtension */,
+				A2D14968E03BD6DD8906C9EB /* CookieZapBlocker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A6806182FBDFCC200DE4AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A6806252FBDFCC400DE4AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A68062F2FBDFCC400DE4AF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8338E8E474AB9F2DAE6E05D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C896795C0A4392A7FD123414 /* blockerlist.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D548A050A16B7513DFBADED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BDC9AFFF36B2AA5E90BCD17 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		406D87EC38F555D7BDD07CC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AF875CBAD37D4E1274A535 /* SafariWebExtensionHandler.swift in Sources */,
+				87E0BB639E9AFBE9631B9958 /* AppGroupManager.swift in Sources */,
+				526D36906E3EA6B618F53005 /* AppGroupIDs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A6806162FBDFCC200DE4AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A6806232FBDFCC400DE4AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A68062D2FBDFCC400DE4AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAA7BA935B81433DA0C96002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163B458103810CE759734CEA /* BlockerRequestHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F0B31008C03C505BB2BBC29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CookieZapBlocker;
+			target = A2D14968E03BD6DD8906C9EB /* CookieZapBlocker */;
+			targetProxy = 788E1E273ECFEC9D06DAD9FA /* PBXContainerItemProxy */;
+		};
+		6A6806292FBDFCC400DE4AF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A6806192FBDFCC200DE4AF1 /* CookieZap */;
+			targetProxy = 6A6806282FBDFCC400DE4AF1 /* PBXContainerItemProxy */;
+		};
+		6A6806332FBDFCC400DE4AF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A6806192FBDFCC200DE4AF1 /* CookieZap */;
+			targetProxy = 6A6806322FBDFCC400DE4AF1 /* PBXContainerItemProxy */;
+		};
+		D9E82776F1DA63C918681C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CookieZapExtension;
+			target = A18690EED3087C74FDD4B974 /* CookieZapExtension */;
+			targetProxy = 39FB88D12DE7E36E09DF5E97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		197C73BF808A91285145B20B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CookieZapExtension/CookieZapExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				FRAMEWORKS = SafariServices;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookieZapExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieZap Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "\"\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapExtension;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3576118F6C7C41A353577DCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CookieZapBlocker/CookieZapBlocker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				FRAMEWORKS = SafariServices;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookieZapBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieZap Blocker";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "\"\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapBlocker;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A6806392FBDFCC400DE4AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A68063A2FBDFCC400DE4AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A68063C2FBDFCC400DE4AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CookieZap/CookieZap.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A68063D2FBDFCC400DE4AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CookieZap/CookieZap.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6A68063F2FBDFCC400DE4AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookieZap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CookieZap";
+			};
+			name = Debug;
+		};
+		6A6806402FBDFCC400DE4AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookieZap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CookieZap";
+			};
+			name = Release;
+		};
+		6A6806422FBDFCC400DE4AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CookieZap;
+			};
+			name = Debug;
+		};
+		6A6806432FBDFCC400DE4AF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CookieZap;
+			};
+			name = Release;
+		};
+		BE0B8691295167911998F73B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CookieZapExtension/CookieZapExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				FRAMEWORKS = SafariServices;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookieZapExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieZap Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "\"\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapExtension;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E65F91AEA04C802302BA6054 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CookieZapBlocker/CookieZapBlocker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				FRAMEWORKS = SafariServices;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookieZapBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieZap Blocker";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "\"\"";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapBlocker;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DA7A92887881DE892795CAA /* Build configuration list for PBXNativeTarget "CookieZapExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197C73BF808A91285145B20B /* Release */,
+				BE0B8691295167911998F73B /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A6806152FBDFCC200DE4AF1 /* Build configuration list for PBXProject "CookieZap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A6806392FBDFCC400DE4AF1 /* Debug */,
+				6A68063A2FBDFCC400DE4AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A68063B2FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A68063C2FBDFCC400DE4AF1 /* Debug */,
+				6A68063D2FBDFCC400DE4AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A68063E2FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A68063F2FBDFCC400DE4AF1 /* Debug */,
+				6A6806402FBDFCC400DE4AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A6806412FBDFCC400DE4AF1 /* Build configuration list for PBXNativeTarget "CookieZapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A6806422FBDFCC400DE4AF1 /* Debug */,
+				6A6806432FBDFCC400DE4AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C9A74E705FEB73B35F3CC0 /* Build configuration list for PBXNativeTarget "CookieZapBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E65F91AEA04C802302BA6054 /* Release */,
+				3576118F6C7C41A353577DCD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A6806122FBDFCC200DE4AF1 /* Project object */;
+}
