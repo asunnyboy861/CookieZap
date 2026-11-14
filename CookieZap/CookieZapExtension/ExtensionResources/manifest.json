@@ -26,7 +26,6 @@
     {
       "matches": ["<all_urls>"],
       "js": ["autoconsent.bundle.js", "content.js"],
-      "css": ["inject.css"],
       "run_at": "document_idle",
       "all_frames": true
     }

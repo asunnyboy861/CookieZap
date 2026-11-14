@@ -28,10 +28,15 @@ function nativeRequest(message) {
   try {
     if (typeof browser !== 'undefined' && browser.runtime && browser.runtime.sendNativeMessage) {
       const result = browser.runtime.sendNativeMessage('cookiezap', message);
-      if (result && typeof result.then === 'function') {
-        return result.catch(() => null);
-      }
-      return Promise.resolve(result || null);
+      const promise = result && typeof result.then === 'function'
+        ? result.catch(() => null)
+        : Promise.resolve(result || null);
+
+      // Never let a stuck native handler freeze the popup or a page load.
+      return Promise.race([
+        promise,
+        new Promise((resolve) => setTimeout(() => resolve(null), 1500))
+      ]);
     }
   } catch (e) {}
   return Promise.resolve(null);

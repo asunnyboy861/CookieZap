@@ -47,7 +47,7 @@ class AppGroupManager {
     }
 
     var ruleVersion: String {
-        get { store.string(forKey: "rule_version") ?? "1.1.0" }
+        get { store.string(forKey: "rule_version") ?? "18.5.0" }
         set { store.set(newValue, forKey: "rule_version") }
     }
 

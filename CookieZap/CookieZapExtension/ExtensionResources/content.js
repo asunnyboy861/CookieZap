@@ -135,6 +135,22 @@
     return next;
   }
 
+  async function loadCachedSettings() {
+    try {
+      if (typeof browser !== 'undefined' && browser.storage && browser.storage.local) {
+        const cached = await withTimeout(
+          browser.storage.local.get(['isEnabled', 'blockingMode', 'whitelistDomains']),
+          500
+        );
+        if (cached && (cached.isEnabled !== undefined || cached.blockingMode !== undefined)) {
+          settings = normalizeSettings(cached);
+          return true;
+        }
+      }
+    } catch (e) {}
+    return false;
+  }
+
   async function loadSettings() {
     let remote = null;
     try {
@@ -411,8 +427,13 @@
   window.addEventListener('message', handleFrameZap, false);
 
   function init() {
-    loadSettings().then(() => {
+    // Apply the cached settings immediately so protection starts with the
+    // first paint, then refresh from the native layer in the background.
+    loadCachedSettings().then(() => {
       applySettings();
+      loadSettings().then(() => {
+        applySettings();
+      });
     });
   }
 
