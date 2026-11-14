@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BDC9AFFF36B2AA5E90BCD17 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 2C57A3AB4B523B6F9848CBFB /* Resources */; };
+		0BDC9AFFF36B2AA5E90BCD17 /* ExtensionResources in Resources */ = {isa = PBXBuildFile; fileRef = 2C57A3AB4B523B6F9848CBFB /* ExtensionResources */; };
 		1499708EF0490BF8E2A0FABD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601CC336F9BBD1598E073D12 /* Foundation.framework */; };
 		163B458103810CE759734CEA /* BlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */; };
 		526D36906E3EA6B618F53005 /* AppGroupIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FFE206BF9A21C4CC893D14 /* AppGroupIDs.swift */; };
@@ -16,6 +16,8 @@
 		9E0D41BCAD4EA0DA5BA75D84 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA116EBCDBAFD273C58D24E /* SafariServices.framework */; };
 		C896795C0A4392A7FD123414 /* blockerlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EE45F57DE509E54EB8759FA /* blockerlist.json */; };
 		C8D9EE6F0367FBD83E6A50DA /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E62466DA1AA3F6C88B86FF /* SafariServices.framework */; };
+		E1F2A3B4C5D6E7F8A1B2C3D5 /* CookieZapExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B0C1AD219A4FB299F673404 /* CookieZapExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1F2A3B4C5D6E7F8A1B2C3D6 /* CookieZapBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AAF4B4AB402FA4D6E919BD35 /* CookieZapBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F5AF875CBAD37D4E1274A535 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F860CA7FAD6B93AA3585DE /* SafariWebExtensionHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,7 @@
 /* Begin PBXFileReference section */
 		0EA1013696A60DE8F50C75BE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = "<group>"; };
 		24E62466DA1AA3F6C88B86FF /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
-		2C57A3AB4B523B6F9848CBFB /* Resources */ = {isa = PBXFileReference; includeInIndex = 1; name = Resources; path = CookieZapExtension/Resources; sourceTree = "<group>"; };
+		2C57A3AB4B523B6F9848CBFB /* ExtensionResources */ = {isa = PBXFileReference; includeInIndex = 1; name = ExtensionResources; path = CookieZapExtension/ExtensionResources; sourceTree = "<group>"; };
 		3EE45F57DE509E54EB8759FA /* blockerlist.json */ = {isa = PBXFileReference; includeInIndex = 1; name = blockerlist.json; path = CookieZapBlocker/blockerlist.json; sourceTree = "<group>"; };
 		45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockerRequestHandler.swift; path = CookieZapBlocker/BlockerRequestHandler.swift; sourceTree = "<group>"; };
 		601CC336F9BBD1598E073D12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,6 +94,21 @@
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1F2A3B4C5D6E7F8A1B2C3D7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1F2A3B4C5D6E7F8A1B2C3D5 /* CookieZapExtension.appex in Embed App Extensions */,
+				E1F2A3B4C5D6E7F8A1B2C3D6 /* CookieZapBlocker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		031666FE6C5B52F1BFF38F1C /* Frameworks */ = {
@@ -155,7 +172,7 @@
 				6A68061B2FBDFCC200DE4AF1 /* Products */,
 				11AE03A41C0D63E7A8683264 /* Frameworks */,
 				D3F860CA7FAD6B93AA3585DE /* SafariWebExtensionHandler.swift */,
-				2C57A3AB4B523B6F9848CBFB /* Resources */,
+				2C57A3AB4B523B6F9848CBFB /* ExtensionResources */,
 				45620393FADB8E9C318547A5 /* BlockerRequestHandler.swift */,
 				3EE45F57DE509E54EB8759FA /* blockerlist.json */,
 				622D1EB989274E1B75EE8A5D /* SafariServices.framework */,
@@ -195,6 +212,7 @@
 				6A6806162FBDFCC200DE4AF1 /* Sources */,
 				6A6806172FBDFCC200DE4AF1 /* Frameworks */,
 				6A6806182FBDFCC200DE4AF1 /* Resources */,
+				E1F2A3B4C5D6E7F8A1B2C3D7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -259,6 +277,7 @@
 				406D87EC38F555D7BDD07CC0 /* Sources */,
 				031666FE6C5B52F1BFF38F1C /* Frameworks */,
 				D548A050A16B7513DFBADED4 /* Resources */,
+				F7E8A1B2C3D4E5F6A7B8C9D0 /* Flatten Extension Resources */,
 			);
 			buildRules = (
 			);
@@ -366,11 +385,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDC9AFFF36B2AA5E90BCD17 /* Resources in Resources */,
+				0BDC9AFFF36B2AA5E90BCD17 /* ExtensionResources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F7E8A1B2C3D4E5F6A7B8C9D0 /* Flatten Extension Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Flatten Extension Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Move extension resources from ExtensionResources/ subdirectory to bundle root\n# Safari requires manifest.json at the root of the extension bundle\nRESOURCES_DIR=\"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/ExtensionResources\"\nif [ -d \"$RESOURCES_DIR\" ]; then\n  cp -R \"$RESOURCES_DIR\"/* \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\n  rm -rf \"$RESOURCES_DIR\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		406D87EC38F555D7BDD07CC0 /* Sources */ = {
@@ -445,8 +486,9 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CookieZapExtension/CookieZapExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORKS = SafariServices;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -459,7 +501,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -480,7 +522,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CookieZapBlocker/CookieZapBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				FRAMEWORKS = SafariServices;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -494,7 +536,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -636,7 +678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CookieZap/CookieZap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -650,7 +692,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -670,7 +712,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CookieZap/CookieZap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -684,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -702,11 +744,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -724,11 +766,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -745,10 +787,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -765,10 +807,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzoutuo.CookieZap.CookieZapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -786,8 +828,9 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CookieZapExtension/CookieZapExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORKS = SafariServices;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -800,7 +843,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -820,7 +863,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CookieZapBlocker/CookieZapBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JP4TN5PTS3;
 				FRAMEWORKS = SafariServices;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -834,7 +877,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,

@@ -1,7 +1,52 @@
 [
   {
     "trigger": {
-      "url-filter": ".*",
+      "url-filter": "cdn\\.cookielaw\\.org",
+      "resource-type": ["script"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "consent\\.cookiebot\\.com",
+      "resource-type": ["script"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "quantcast\\.mgr\\.consensu\\.org",
+      "resource-type": ["script"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "cdn\\.usercentrics\\.eu",
+      "resource-type": ["script"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "app\\.termly\\.io",
+      "resource-type": ["script"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "ccm\\.borlabs\\.io",
       "resource-type": ["script"]
     },
     "action": {

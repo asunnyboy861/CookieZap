@@ -30,13 +30,14 @@
 - Terms of Use: ❌ (Not needed for paid download apps)
 
 ## Included Features (All unlocked with purchase)
-- Smart cookie popup rejection (click "Reject" buttons)
-- CSS fallback hiding
-- Statistics dashboard (today/total/success rate)
-- Whitelist management
-- Safari toolbar popup control
-- Rule auto-update from GitHub
-- Widget (stats + toggle)
+- Smart cookie popup rejection powered by 1,609 DuckDuckGo Autoconsent rules
+- Works on OneTrust, Cookiebot, Didomi, Usercentrics, Quantcast and hundreds more
+- CSS fallback hiding for known banners
+- Statistics dashboard (today / all time / last 7 days, recent activity)
+- Whitelist management from the app and the Safari toolbar popup
+- Safari toolbar popup with live per-site status and manual "Zap this page"
+- One-tap test page to confirm protection in seconds
+- Rule updates bundled with app updates (no account, no servers)
 - All future updates
 
 ## Not Included
@@ -44,3 +45,4 @@
 - No in-app purchases
 - No ads
 - No data collection
+- No widget (the 1.0 listing mentioned one; 1.1 removes that claim because no widget target ships)

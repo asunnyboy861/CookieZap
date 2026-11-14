@@ -5,6 +5,10 @@ import SwiftData
 struct CookieZapApp: App {
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
+    init() {
+        ReviewPromptService.registerFirstLaunchIfNeeded()
+    }
+
     var body: some Scene {
         WindowGroup {
             if hasCompletedOnboarding {

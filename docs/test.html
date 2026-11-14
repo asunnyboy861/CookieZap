@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CookieZap Test Page</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7fa;
+    --card: #ffffff;
+    --text: #141416;
+    --secondary: #6b6b73;
+    --line: rgba(0, 0, 0, 0.08);
+    --blue: #0a84ff;
+    --green: #1f9d55;
+    --orange: #c77700;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f12;
+      --card: #1c1c1f;
+      --text: #f2f2f7;
+      --secondary: #9a9aa2;
+      --line: rgba(255, 255, 255, 0.12);
+      --green: #30d158;
+      --orange: #ff9f0a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    padding-bottom: 180px;
+  }
+  header {
+    padding: 28px 20px 8px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .logo {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: linear-gradient(135deg, #0a84ff, #38c6ff);
+    display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 18px;
+  }
+  h1 { font-size: 24px; margin: 14px 0 6px; letter-spacing: -0.02em; }
+  .lede { color: var(--secondary); margin: 0 0 18px; }
+  main { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+  .status {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .status-row { display: flex; align-items: center; gap: 9px; font-weight: 650; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
+  .dot.green { background: var(--green); }
+  .dot.red { background: #ff453a; }
+  .status p { margin: 8px 0 0; color: var(--secondary); font-size: 14px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card h2 { font-size: 17px; margin: 0 0 10px; }
+  .card p { margin: 0 0 10px; color: var(--secondary); font-size: 14.5px; }
+  ol { margin: 8px 0 0; padding-left: 20px; color: var(--secondary); font-size: 14px; }
+  li { margin-bottom: 6px; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  button {
+    font: inherit; font-weight: 600; border: none; border-radius: 11px;
+    padding: 10px 14px; cursor: pointer;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--blue); border: 1px solid var(--line); }
+  .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .chip {
+    font-size: 12px; color: var(--secondary); border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 9px;
+  }
+  /* Cookie banner */
+  #cz-cookie-banner {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    background: var(--card);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.18);
+    padding: 18px 20px 22px;
+    transform: translateY(110%);
+    transition: transform 0.35s ease;
+    z-index: 9999;
+  }
+  #cz-cookie-banner.show { transform: translateY(0); }
+  .banner-inner { max-width: 640px; margin: 0 auto; }
+  .banner-title { font-weight: 700; font-size: 16px; margin: 0 0 6px; display: flex; gap: 8px; align-items: center; }
+  .banner-text { margin: 0 0 14px; color: var(--secondary); font-size: 13.5px; }
+  .banner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .banner-actions .accept { background: transparent; color: var(--secondary); border: 1px solid var(--line); }
+  .banner-actions .reject { background: var(--blue); color: #fff; }
+  .footer-note { text-align: center; color: var(--secondary); font-size: 12px; margin: 26px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">Z</div>
+    <strong>CookieZap</strong>
+  </div>
+  <h1>Cookie banner test page</h1>
+  <p class="lede">This page shows a real cookie banner. If CookieZap is enabled in Safari, the banner is refused or hidden for you — no taps needed.</p>
+</header>
+
+<main>
+  <section class="status" id="statusCard">
+    <div class="status-row"><span class="dot" id="statusDot"></span><span id="statusTitle">Waiting for the banner…</span></div>
+    <p id="statusText">A cookie banner will appear in a moment. Keep this tab open for a few seconds.</p>
+  </section>
+
+  <section class="card">
+    <h2>What should happen</h2>
+    <ol>
+      <li>The banner appears at the bottom of this page.</li>
+      <li>CookieZap recognises it and chooses “Reject all”.</li>
+      <li>The banner disappears and the status above turns green.</li>
+    </ol>
+    <div class="actions">
+      <button class="btn-primary" id="showAgain">Show the banner again</button>
+      <button class="btn-secondary" id="onetrustDemo">Try an OneTrust-style banner</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Nothing happened?</h2>
+    <p>Open the CookieZap app, follow the setup guide, and make sure the extension is turned on in Safari.</p>
+    <ol>
+      <li>Settings › Safari › Extensions</li>
+      <li>Turn on CookieZap and allow access</li>
+      <li>Reload this page and tap “Show the banner again”</li>
+    </ol>
+    <div class="chip-row">
+      <span class="chip">Smart Reject</span>
+      <span class="chip">Hide Only</span>
+      <span class="chip">Block All</span>
+      <span class="chip">1,609 consent platforms</span>
+    </div>
+  </section>
+
+  <p class="footer-note">CookieZap uses the open-source DuckDuckGo Autoconsent rules. This test page stores nothing and sends nothing.</p>
+</main>
+
+<!-- A generic, self-built banner. CookieZap's heuristic engine handles these. -->
+<div id="cz-cookie-banner" class="cookie-consent-banner" role="dialog" aria-label="Cookie consent">
+  <div class="banner-inner">
+    <p class="banner-title">🍪 We value your privacy</p>
+    <p class="banner-text">We and our partners use cookies to personalise content and ads, and to analyse traffic. Choose “Reject all” to browse with essential cookies only.</p>
+    <div class="banner-actions">
+      <button class="accept" id="cz-accept">Accept all</button>
+      <button class="reject" id="cz-reject">Reject all</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var banner = document.getElementById('cz-cookie-banner');
+  var dot = document.getElementById('statusDot');
+  var title = document.getElementById('statusTitle');
+  var text = document.getElementById('statusText');
+  var showAgain = document.getElementById('showAgain');
+  var oneTrustDemo = document.getElementById('onetrustDemo');
+  var watchTimer = null;
+  var bannerShownAt = 0;
+
+  function isHidden(el) {
+    if (!el) return true;
+    var style = window.getComputedStyle(el);
+    return style.display === 'none' || style.visibility === 'hidden' || el.getClientRects().length === 0;
+  }
+
+  function setStatus(kind, heading, detail) {
+    dot.className = 'dot' + (kind === 'success' ? ' green' : kind === 'error' ? ' red' : '');
+    title.textContent = heading;
+    text.textContent = detail;
+  }
+
+  function showBanner() {
+    banner.classList.add('show');
+    bannerShownAt = Date.now();
+    setStatus('waiting', 'Banner is visible', 'Waiting for CookieZap to refuse it…');
+    startWatching();
+  }
+
+  function startWatching() {
+    if (watchTimer) clearInterval(watchTimer);
+    var checks = 0;
+    watchTimer = setInterval(function () {
+      checks++;
+      if (isHidden(banner) || !banner.classList.contains('show')) {
+        clearInterval(watchTimer);
+        watchTimer = null;
+        banner.classList.remove('show');
+        var elapsed = Math.max(0, Math.round((Date.now() - bannerShownAt) / 100) / 10);
+        setStatus('success', 'CookieZap worked 🎉', 'The banner was refused automatically in ' + elapsed + 's. Protection is on.');
+      } else if (checks > 40) {
+        clearInterval(watchTimer);
+        watchTimer = null;
+        setStatus('error', 'The banner is still here', 'CookieZap may be off, paused for this site, or Safari has not loaded the extension. Open the CookieZap app for setup steps.');
+      }
+    }, 250);
+  }
+
+  function reject() {
+    try { localStorage.setItem('cz_test_consent', 'rejected'); } catch (e) {}
+    banner.classList.remove('show');
+    setStatus('success', 'Rejected', 'You tapped “Reject all”. That is exactly what CookieZap does for you automatically.');
+  }
+
+  function accept() {
+    try { localStorage.setItem('cz_test_consent', 'accepted'); } catch (e) {}
+    banner.classList.remove('show');
+    setStatus('error', 'Accepted', 'You tapped “Accept all”. With CookieZap on, this never has to happen.');
+  }
+
+  document.getElementById('cz-reject').addEventListener('click', reject);
+  document.getElementById('cz-accept').addEventListener('click', accept);
+
+  showAgain.addEventListener('click', function () {
+    try { localStorage.removeItem('cz_test_consent'); } catch (e) {}
+    showBanner();
+  });
+
+  oneTrustDemo.addEventListener('click', function () {
+    window.location.href = 'test.html?banner=onetrust';
+  });
+
+  setTimeout(function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('banner') === 'onetrust') {
+      buildOneTrust();
+    } else {
+      showBanner();
+    }
+  }, 600);
+
+  // A minimal OneTrust-shaped banner, so you can see platform-specific rules.
+  function buildOneTrust() {
+    var cookies = document.getElementById('cz-cookie-banner');
+    cookies.outerHTML = [
+      '<div id="onetrust-consent-sdk">',
+      '  <div id="onetrust-banner-sdk" class="otFlat" role="dialog" aria-label="Privacy">',
+      '    <div class="ot-sdk-container" style="position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:18px 20px;z-index:9999;">',
+      '      <p style="font-weight:700;margin:0 0 6px;">We value your privacy</p>',
+      '      <p style="color:var(--secondary);font-size:13.5px;margin:0 0 14px;">We use cookies to improve your experience. You can reject all non-essential cookies below.</p>',
+      '      <button id="onetrust-accept-btn-handler" style="background:transparent;color:var(--secondary);border:1px solid var(--line);border-radius:11px;padding:10px 14px;margin-right:8px;">Accept all</button>',
+      '      <button id="onetrust-reject-all-handler" style="background:var(--blue);color:#fff;border:none;border-radius:11px;padding:10px 14px;margin-right:8px;">Reject all</button>',
+      '      <button id="onetrust-pc-btn-handler" style="background:transparent;color:var(--secondary);border:1px solid var(--line);border-radius:11px;padding:10px 14px;">Cookies Settings</button>',
+      '    </div>',
+      '  </div>',
+      '  <div id="onetrust-pc-sdk" style="display:none;">',
+      '    <button class="ot-pc-refuse-all-handler">Reject all</button>',
+      '    <button class="save-preference-btn-handler">Confirm my choices</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+    banner = document.getElementById('onetrust-banner-sdk');
+    bannerShownAt = Date.now();
+
+    var rejectBtn = document.getElementById('onetrust-reject-all-handler');
+    var acceptBtn = document.getElementById('onetrust-accept-btn-handler');
+
+    function hideOneTrust(result) {
+      var sdk = document.getElementById('onetrust-consent-sdk');
+      if (sdk) sdk.style.display = 'none';
+      if (result === 'success') {
+        setStatus('success', 'Rejected', 'The OneTrust banner was refused. CookieZap does this automatically on real sites.');
+      } else {
+        setStatus('error', 'Accepted', 'With CookieZap on, “Reject all” is chosen for you.');
+      }
+    }
+
+    var refuseAll = document.querySelector('.ot-pc-refuse-all-handler');
+    var savePrefs = document.querySelector('.save-preference-btn-handler');
+    if (refuseAll) refuseAll.addEventListener('click', function () { hideOneTrust('success'); });
+    if (savePrefs) savePrefs.addEventListener('click', function () { hideOneTrust('success'); });
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function () { hideOneTrust('success'); });
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () { hideOneTrust('error'); });
+    }
+
+    setStatus('waiting', 'OneTrust banner is visible', 'Waiting for CookieZap to refuse it…');
+    startWatching();
+  }
+})();
+</script>
+</body>
+</html>

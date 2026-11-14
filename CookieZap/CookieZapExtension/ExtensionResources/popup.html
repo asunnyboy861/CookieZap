@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookieZap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="brand">
+        <img src="images/icon-48.png" alt="" class="logo">
+        <div class="brand-text">
+          <h1>CookieZap</h1>
+          <span id="siteName" class="site">Checking this page…</span>
+        </div>
+      </div>
+      <label class="switch" title="Turn CookieZap on or off">
+        <input type="checkbox" id="enableToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <section id="statusCard" class="status-card">
+      <div class="status-row">
+        <span id="statusDot" class="dot"></span>
+        <span id="statusTitle" class="status-title">Checking…</span>
+      </div>
+      <p id="statusDetail" class="status-detail">Looking for cookie banners on this page.</p>
+      <button id="zapButton" class="primary">Zap this page</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span id="todayCount" class="stat-value">0</span>
+        <span class="stat-label">Today</span>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <span id="totalCount" class="stat-value">0</span>
+        <span class="stat-label">All time</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="section-label">Blocking mode</span>
+      <div class="modes" role="tablist">
+        <button class="mode" data-mode="smart" role="tab">Smart</button>
+        <button class="mode" data-mode="hide" role="tab">Hide</button>
+        <button class="mode" data-mode="block" role="tab">Block</button>
+      </div>
+      <p id="modeHint" class="hint">Finds and clicks “Reject” for you.</p>
+    </section>
+
+    <section class="section">
+      <label class="row">
+        <div class="row-text">
+          <span class="row-title">Pause on this site</span>
+          <span class="row-sub">Let cookie banners show here</span>
+        </div>
+        <label class="switch small">
+          <input type="checkbox" id="whitelistToggle">
+          <span class="slider"></span>
+        </label>
+      </label>
+    </section>
+
+    <footer class="footer">
+      <span>Rules by DuckDuckGo Autoconsent</span>
+      <span id="ruleCount">1,609 platforms</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

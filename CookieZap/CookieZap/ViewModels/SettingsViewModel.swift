@@ -15,6 +15,29 @@ class SettingsViewModel {
         blockingMode = appGroup.blockingMode
     }
 
+    /// The App Group is the single source of truth because the Safari popup can
+    /// pause a site without launching the app. Mirror it into SwiftData so the
+    /// list users edit here always matches what the extension actually does.
+    func syncWhitelist(modelContext: ModelContext) {
+        let shared = Set(appGroup.whitelistDomains)
+        let existing = (try? modelContext.fetch(FetchDescriptor<WhitelistSite>())) ?? []
+
+        var existingDomains = Set<String>()
+        for site in existing {
+            if shared.contains(site.domain) {
+                existingDomains.insert(site.domain)
+            } else {
+                modelContext.delete(site)
+            }
+        }
+
+        for domain in shared where !existingDomains.contains(domain) {
+            modelContext.insert(WhitelistSite(domain: domain))
+        }
+
+        try? modelContext.save()
+    }
+
     func toggleEnabled() {
         appGroup.isEnabled = isEnabled
     }

@@ -4,55 +4,56 @@ import Foundation
 class AppGroupManager {
     static let shared = AppGroupManager()
 
-    private let defaults: UserDefaults?
+    /// App Group is the source of truth shared with the Safari extensions.
+    /// If the entitlement is missing (e.g. a local build without a provisioning
+    /// profile), fall back to standard defaults so the app and the extension
+    /// never crash or silently lose every write.
+    private let store: UserDefaults
 
     private init() {
-        defaults = UserDefaults(suiteName: AppGroupIDs.shared)
+        store = UserDefaults(suiteName: AppGroupIDs.shared) ?? .standard
     }
 
+    var defaultsRef: UserDefaults { store }
+
     var isEnabled: Bool {
-        get { defaults?.bool(forKey: "is_enabled") ?? true }
-        set { defaults?.set(newValue, forKey: "is_enabled") }
+        get { store.object(forKey: "is_enabled") as? Bool ?? true }
+        set { store.set(newValue, forKey: "is_enabled") }
     }
 
     var blockingMode: String {
-        get { defaults?.string(forKey: "blocking_mode") ?? "smart" }
-        set { defaults?.set(newValue, forKey: "blocking_mode") }
+        get { store.string(forKey: "blocking_mode") ?? "smart" }
+        set { store.set(newValue, forKey: "blocking_mode") }
     }
 
     var todayZapped: Int {
-        get { defaults?.integer(forKey: "today_zapped") ?? 0 }
-        set { defaults?.set(newValue, forKey: "today_zapped") }
+        get { store.integer(forKey: "today_zapped") }
+        set { store.set(newValue, forKey: "today_zapped") }
     }
 
     var totalZapped: Int {
-        get { defaults?.integer(forKey: "total_zapped") ?? 0 }
-        set { defaults?.set(newValue, forKey: "total_zapped") }
+        get { store.integer(forKey: "total_zapped") }
+        set { store.set(newValue, forKey: "total_zapped") }
     }
 
     var totalRejected: Int {
-        get { defaults?.integer(forKey: "total_rejected") ?? 0 }
-        set { defaults?.set(newValue, forKey: "total_rejected") }
+        get { store.integer(forKey: "total_rejected") }
+        set { store.set(newValue, forKey: "total_rejected") }
     }
 
     var totalAttempted: Int {
-        get { defaults?.integer(forKey: "total_attempted") ?? 0 }
-        set { defaults?.set(newValue, forKey: "total_attempted") }
-    }
-
-    var lastUpdateTimestamp: Date {
-        get { defaults?.object(forKey: "last_update_timestamp") as? Date ?? .distantPast }
-        set { defaults?.set(newValue, forKey: "last_update_timestamp") }
+        get { store.integer(forKey: "total_attempted") }
+        set { store.set(newValue, forKey: "total_attempted") }
     }
 
     var ruleVersion: String {
-        get { defaults?.string(forKey: "rule_version") ?? "1.0.0" }
-        set { defaults?.set(newValue, forKey: "rule_version") }
+        get { store.string(forKey: "rule_version") ?? "1.1.0" }
+        set { store.set(newValue, forKey: "rule_version") }
     }
 
     var whitelistDomains: [String] {
-        get { defaults?.stringArray(forKey: "whitelist_domains") ?? [] }
-        set { defaults?.set(newValue, forKey: "whitelist_domains") }
+        get { store.stringArray(forKey: "whitelist_domains") ?? [] }
+        set { store.set(newValue, forKey: "whitelist_domains") }
     }
 
     func addWhitelistDomain(_ domain: String) {
@@ -69,14 +70,19 @@ class AppGroupManager {
         whitelistDomains = domains
     }
 
-    func recordZap(action: String) {
+    /// Resets the daily counter when the calendar day rolled over while the
+    /// app was in the background. Called before every dashboard read.
+    func refreshDailyIfNeeded() {
         let today = Calendar.current.startOfDay(for: .now)
-        let lastReset = defaults?.object(forKey: "last_daily_reset") as? Date ?? .distantPast
-
+        let lastReset = store.object(forKey: "last_daily_reset") as? Date ?? .distantPast
         if today > lastReset {
-            defaults?.set(0, forKey: "today_zapped")
-            defaults?.set(today, forKey: "last_daily_reset")
+            todayZapped = 0
+            store.set(today, forKey: "last_daily_reset")
         }
+    }
+
+    func recordZap(action: String) {
+        refreshDailyIfNeeded()
 
         todayZapped += 1
         totalZapped += 1
@@ -84,5 +90,6 @@ class AppGroupManager {
         if action == "rejected" {
             totalRejected += 1
         }
+        store.set(Date(), forKey: "last_zap_at")
     }
 }

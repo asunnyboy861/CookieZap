@@ -5,11 +5,9 @@ import SwiftData
 final class WhitelistSite {
     var domain: String
     var addedAt: Date
-    var isTemporary: Bool
 
-    init(domain: String, isTemporary: Bool = false) {
+    init(domain: String) {
         self.domain = domain
         self.addedAt = .now
-        self.isTemporary = isTemporary
     }
 }

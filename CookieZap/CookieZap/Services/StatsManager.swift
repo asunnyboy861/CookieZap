@@ -15,6 +15,7 @@ class StatsManager {
     }
 
     func loadStats() {
+        appGroup.refreshDailyIfNeeded()
         todayZapped = appGroup.todayZapped
         totalZapped = appGroup.totalZapped
         let attempted = appGroup.totalAttempted
